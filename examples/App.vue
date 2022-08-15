@@ -1,37 +1,29 @@
 <template>
   <div id="app">
-    <echarts-line :width="500" :height="500" id="id1" :xData="['a','b','c']" :yData="[1,2,3,4]"
-                  :option="{1:1}"></echarts-line>
-    <echarts-bar :width="500" :height="500" id="id2" :xData="['a','b','c']" :yData="[[1,2],[1,2]]"
-                 :option="{1:1}"></echarts-bar>
-    <echartsMap :width="500" :height="500" id="id3" :map-json="chinaJson" map-name="china"></echartsMap>
-    <echartsMap3D :width="500" :height="500" id="id4" :map-json="chinaJson" map-name="china"></echartsMap3D>
-    <echartsPie :width="500" :height="500" id="id5" :data="[1,1]" map-name="china"></echartsPie>
+    <lv-dialog></lv-dialog>
   </div>
 </template>
 
 <script>
-
-import chinaJson from './assets/json/china.json'
+import LvDialog from '../packages/dialog/src/index.vue'
 export default {
   name: 'App',
+  components: { LvDialog },
   data () {
-    return { chinaJson }
-  },
-  components: {
-    // echartsBar,
-    // echartsMap,
-    // echartsMap3D,
-    // echartsPie
-
-  },
-  mounted () {
+    return {}
   }
 }
 </script>
 
 <style lang="less">
+*{
+  margin: 0;
+  padding: 0;
+}
 #app {
-  background-color: #000;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('https://cdn.pixabay.com/photo/2022/07/26/03/31/sea-7344974_960_720.jpg');
+  background-size: 100% 100%;
 }
 </style>
